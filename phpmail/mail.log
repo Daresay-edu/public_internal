@@ -1,0 +1,33 @@
+Apr 18 15:42:53 Edward[7408]: Trying to Connect smtp.163.com:25...
+Apr 18 15:42:53 Edward[7408]: Connected Ok
+Apr 18 15:42:54 Edward[7408]: Error: Remote host returned "554 DT:SPM 163 smtp1,C9GowADn7qoy4xRX+AUMBA--.2639S2 1460986674,please see http://mail.163.com/help/help_spam_16.htm?ip=125.39.106.99&hostid=smtp1&time=1460986674"
+Apr 18 15:42:54 Edward[7408]: Error: Cannot send email to <daxik1004@163.com>
+Apr 18 15:42:54 Edward[7408]: Array send over;
+Apr 18 15:42:54 Edward[7408]: Trying to Connect smtp.163.com:25...
+Apr 18 15:42:54 Edward[7408]: Connected Ok
+Apr 18 15:42:54 Edward[7408]: E-mail has been sent to <15302130568@163.com>
+Apr 18 15:42:54 Edward[7408]: Array send over;
+Apr 18 15:46:25 Edward[7408]: Trying to Connect smtp.163.com:25...
+Apr 18 15:46:25 Edward[7408]: Connected Ok
+Apr 18 15:46:26 Edward[7408]: E-mail has been sent to <daxik1004@163.com>
+Apr 18 15:46:26 Edward[7408]: Array send over;
+Apr 18 15:46:26 Edward[7408]: Trying to Connect smtp.163.com:25...
+Apr 18 15:46:26 Edward[7408]: Connected Ok
+Apr 18 15:46:27 Edward[7408]: E-mail has been sent to <15302130568@163.com>
+Apr 18 15:46:27 Edward[7408]: Array send over;
+Apr 18 15:52:16 Edward[7408]: Trying to Connect smtp.163.com:25...
+Apr 18 15:52:16 Edward[7408]: Connected Ok
+Apr 18 15:52:16 Edward[7408]: E-mail has been sent to <daxik1004@163.com>
+Apr 18 15:52:16 Edward[7408]: Array send over;
+Apr 18 15:52:16 Edward[7408]: Trying to Connect smtp.163.com:25...
+Apr 18 15:52:16 Edward[7408]: Connected Ok
+Apr 18 15:52:17 Edward[7408]: E-mail has been sent to <15302130568@163.com>
+Apr 18 15:52:17 Edward[7408]: Array send over;
+Apr 18 15:58:20 Edward[7408]: Trying to Connect smtp.163.com:25...
+Apr 18 15:58:21 Edward[7408]: Connected Ok
+Apr 18 15:58:21 Edward[7408]: E-mail has been sent to <daxik1004@163.com>
+Apr 18 15:58:21 Edward[7408]: Array send over;
+Apr 18 15:58:21 Edward[7408]: Trying to Connect smtp.163.com:25...
+Apr 18 15:58:21 Edward[7408]: Connected Ok
+Apr 18 15:58:23 Edward[7408]: E-mail has been sent to <15302130568@163.com>
+Apr 18 15:58:23 Edward[7408]: Array send over;
