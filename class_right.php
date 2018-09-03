@@ -12,6 +12,7 @@
 
 <div class='box-content'>
 <a href='class_add.php' class='add-button'><span>Add new class</span></a>
+
 <div class='cl'>&nbsp;</div>
 
 

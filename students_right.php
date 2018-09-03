@@ -7,6 +7,16 @@
 <link rel="stylesheet" href="css/jquery.fancybox.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 <script type="text/javascript" src="js/daresay.js"></script>
+<script>
+    function delete_stu(){
+        if(confirm("确认删除吗？")){
+            form1.action='students_manage.php?action=delete';
+	    form1.submit();
+	}
+        return false;
+        
+    }
+</script>
 </head>
 <body>
 
@@ -62,7 +72,7 @@
 <br/>
 <input class='field'  style="background-color:#F9EBAE" type="button" onclick="form1.action='students_manage.php?action=modify';form1.submit();" value="Modify"/><span></span>
 <input class='field'  style="background-color:#F9EBAE" type="button" onclick="form1.action='students_manage.php?action=copy';form1.submit();" value="Copy"/><span></span>
-<input class='field'  style="background-color:#F9EBAE" type="button" onclick="form1.action='students_manage.php?action=delete';form1.submit();" value="Delete"/><span></span>
+<input class='field'  style="background-color:#F9EBAE" type="button" onclick="return delete_stu();" value="Delete"/><span></span>
 <div class='cl'>&nbsp;</div>
 </div>
 </form>
