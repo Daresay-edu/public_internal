@@ -47,7 +47,7 @@ td
 							$conn=db_conn("daresay_db");
 							$table_name="teachers";
 							//operator must be Edward
-							$sql="SELECT * FROM {$table_name} WHERE engname='Edward'";
+							$sql="SELECT * FROM {$table_name} WHERE engname='admin'";
 							$result=mysql_query($sql,$conn);
 							if (!$result) {
 								die("SQL: {$sql}<br>Error:".mysql_error());

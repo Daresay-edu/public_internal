@@ -86,7 +86,7 @@ height: 30px;
 								
 								$table_name="teachers";
 								
-									$sql="SELECT * FROM {$table_name} WHERE engname='liyanchun'";
+									$sql="SELECT * FROM {$table_name} WHERE engname='admin'";
 									$result=mysql_query($sql,$conn);
 									if (!$result) {
 										die("SQL: {$sql}<br>Error:".mysql_error());

@@ -100,7 +100,7 @@ height: 30px;
 								echo "<td>班级</td>";
 								echo "<td>缴费课时</td>";
 								echo "<td>金额</td>";
-								echo "<td>积分</td>";
+						
 								echo "</tr>";
 								$i=1;
 								while ($row = mysql_fetch_assoc($result)) {
@@ -114,7 +114,7 @@ height: 30px;
 										echo "<td>".$row['classid']."</td>";
 										echo "<td>".$row['hour_begin']."至".$row['hour_end']."</td>";
 										echo "<td>".$row['charge']."</td>";
-										echo "<td>".$row['credit']."</td>";
+								
 									echo "</tr>";
 								}
 								echo "</table>";
@@ -136,8 +136,8 @@ height: 30px;
 								$month=$_POST["month"];
 								$day=$_POST["day"];
 								$sex=$_POST["sex"];
-								$credit=$_POST["credit"];
-								$online=$_POST["online"];
+								
+								$online=0;
 
 								$pay_time=$year."-".$month."-".$day;
 								//check if have the same engname in db
@@ -156,9 +156,9 @@ height: 30px;
 								}
 								// insert into students table
 								$sql="INSERT INTO students (name, engname, classid, age, phone,school, pay_time, 
-									charge,  hour_begin, hour_end, note, sex, credit)
+									charge,  hour_begin, hour_end, note, sex)
 								      VALUES ('$name', '$engname', '$classid', '$age', '$phone', '$school', '$pay_time',
-								      '$charge','$hour_begin', '$hour_end','$note', '$sex', '$credit');";
+								      '$charge','$hour_begin', '$hour_end','$note', '$sex');";
 								$result=mysql_query($sql,$conn);
 								if (!$result)
 									die("SQL: {$sql}<br>Error:".mysql_error());
@@ -222,10 +222,6 @@ height: 30px;
 									echo "<tr>";
 										echo "<td>课时</td>";
 										echo "<td>".$row['hour_begin']."至".$row['hour_end']."</td>";
-									echo "</tr>";
-									echo "<tr>";
-										echo "<td>积分</td>";
-										echo "<td>".$row['credit']."</td>";
 									echo "</tr>";
 									echo "<tr>";
 										echo "<td>备注</td>";
@@ -321,9 +317,7 @@ height: 30px;
 								$hour_end=$row['hour_end'];
 								$note=$row['note'];
 								$sex=$row['sex'];
-								$credit=$row['credit'];
-
-
+								
 								echo "<form action='students_manage.php?action=modify_do' method='post'>
 								       <table border='0' align='center' width='800'>
 									<tr>
@@ -417,18 +411,8 @@ height: 30px;
 										<td align='center' >备注:</td>
 										<td><input type='text' name='note' value='$note'/></td>
 										</tr>
-										<tr>
-										<td align='center' >积分:</td>
-										<td><input type='text' name='credit' value='$credit'/></td>
-										</tr>
-										<tr>
-											<td align='center' >修改Online</td>
-											<td><select class='field' name='online'>
-												<option value='1'>是</option>;
-												<option value='0'>否</option>;
-												</select>
-											</td>
-										</tr>
+										
+									
 										<tr>
 										<td align='right'><input type='submit' name='add' value='修改'/></td>
 										</tr>";
@@ -476,7 +460,7 @@ height: 30px;
 								$hour_end=$row['hour_end'];
 								$note=$row['note'];
 								$sex=$row['sex'];
-								$credit=$row['credit'];
+								
 
 
 								echo "<form action='students_manage.php?action=copy_do' method='post'>
@@ -572,18 +556,7 @@ height: 30px;
 										<td align='center' >备注:</td>
 										<td><input type='text' name='note' value='$note'/></td>
 										</tr>
-										<tr>
-										<td align='center' >积分:</td>
-										<td><input type='text' name='credit' value='$credit'/></td>
-										</tr>
-										<tr>
-											<td align='center' >修改Online</td>
-											<td><select class='field' name='online'>
-												<option value='1'>是</option>;
-												<option value='0'>否</option>;
-												</select>
-											</td>
-										</tr>
+									
 										<tr>
 										<td align='right'><input type='submit' name='add' value='Copy'/></td>
 										</tr>";
@@ -616,8 +589,8 @@ height: 30px;
 								$note=$_POST["note"];
 								$pay_time=$_POST["pay_time"];
 								$sex=$_POST["sex"];
-								$credit=$_POST["credit"];
-								$online=$_POST["online"];
+								
+								$online=0;
 
 								
 								//check if have the same engname in db
@@ -636,9 +609,9 @@ height: 30px;
 								}
 								// insert into students table
 								$sql="INSERT INTO students (name, engname, classid, age, phone,school, pay_time, 
-									charge,  hour_begin, hour_end, note, sex, credit)
+									charge,  hour_begin, hour_end, note, sex)
 								      VALUES ('$name', '$engname', '$classid', '$age', '$phone', '$school', '$pay_time',
-								      '$charge','$hour_begin', '$hour_end','$note', '$sex', '$credit');";
+								      '$charge','$hour_begin', '$hour_end','$note', '$sex');";
 								$result=mysql_query($sql,$conn);
 								if (!$result)
 									die("SQL: {$sql}<br>Error:".mysql_error());
@@ -703,10 +676,7 @@ height: 30px;
 										echo "<td>课时</td>";
 										echo "<td>".$row['hour_begin']."至".$row['hour_end']."</td>";
 									echo "</tr>";
-									echo "<tr>";
-										echo "<td>积分</td>";
-										echo "<td>".$row['credit']."</td>";
-									echo "</tr>";
+									
 									echo "<tr>";
 										echo "<td>备注</td>";
 										echo "<td>".$row['note']."</td>";
@@ -715,7 +685,7 @@ height: 30px;
 								echo '<br/>';
 								echo "Success!";
 								mysql_close($conn);
-								$where = "888";
+								$where = "1";
                                 send_mail("18020023616@163.com", "New Student From ".$where, $name."-".$age."岁-".$school."-".$phone);
 							break;
 							case "modify_do":
@@ -731,8 +701,8 @@ height: 30px;
 								$hour_end=$_POST["hour_end"];
 								$note=$_POST["note"];
 								$sex=$_POST["sex"];
-								$online=$_POST["online"];
-								$credit=$_POST["credit"];
+								$online=0;
+								
 								$engname_hide=$_POST["engname_hide"];
 								$classid_hide=$_POST["classid_hide"];
 
@@ -760,9 +730,9 @@ height: 30px;
 								// insert into db
 								$hour_begin = 0;
 								$sql="INSERT INTO students (name, engname, classid, age, phone,school, pay_time, 
-									charge,  hour_begin,hour_end, 	note, sex, credit)
+									charge,  hour_begin,hour_end, 	note, sex)
 								      VALUES ('$name', '$engname', '$classid', '$age', '$phone', '$school', '$pay_time',
-								      '$charge','$hour_begin','$hour_end', '$note', '$sex', '$credit');";
+								      '$charge','$hour_begin','$hour_end', '$note', '$sex');";
 								$result=mysql_query($sql,$conn);
 								if (!$result)
 									die("SQL: {$sql}<br>Error:".mysql_error());
@@ -829,10 +799,7 @@ height: 30px;
 										echo "<td>课时数</td>";
 										echo "<td>".$row['hour_begin']."至".$row['hour_end']."</td>";
 									echo "</tr>";
-									echo "<tr>";
-										echo "<td>积分</td>";
-										echo "<td>".$row['credit']."</td>";
-									echo "</tr>";
+									
 									echo "<tr>";
 										echo "<td>备注</td>";
 										echo "<td>".$row['note']."</td>";

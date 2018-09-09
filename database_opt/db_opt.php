@@ -12,7 +12,7 @@ function backup_db() {
 		ini_set('max_execution_time','1000');
 		$mysql_server_name='localhost';
 		$mysql_username='root';
-		$mysql_password='xingpai888';
+		$mysql_password='168168';
 		$mysql_database='xingpai';//云主机上的数据库名字
 		
 		$conn=mysql_connect($mysql_server_name,$mysql_username,$mysql_password,$mysql_database);
